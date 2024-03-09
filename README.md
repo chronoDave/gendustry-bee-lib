@@ -31,6 +31,7 @@ _Note: This package requires Node >10.12.0 and Minecraft 1.7.10._
 Recreation of [Gendustry's example bees](https://github.com/bdew-minecraft/gendustry/blob/mc1710/example_configs/example_bees.cfg).
 
 ```TS
+import fs from 'fs';
 import {
   formatBranch,
   formatCustom,
@@ -99,6 +100,11 @@ const branch = formatBranch('gendustry')({
     }]
   }];
 });
+
+fs.writeFileSync('example_bees.cfg', [
+  branch.join('\n'),
+  flower.join('\n)
+].join('\n));
 ```
 
 ## API
