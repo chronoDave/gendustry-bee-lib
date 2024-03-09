@@ -17,11 +17,11 @@ test('[bee] formats bee', t => {
     traits: {
       base: 'base'
     },
-    mutation: {
+    mutations: [{
       n: 0.1,
       left: 'left',
       right: 'right'
-    }
+    }]
   };
   const bee = formatBee(branch)(data);
 
@@ -56,11 +56,11 @@ test('[bee] limits author field', t => {
     traits: {
       base: 'base'
     },
-    mutation: {
+    mutations: [{
       n: 0.1,
       left: '',
       right: ''
-    },
+    }],
     color: {
       primary: '#111111',
       secondary: '#222222'

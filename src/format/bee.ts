@@ -41,7 +41,7 @@ export default (branch: string) => (bee: Bee) => {
     '}',
     '',
     'recipes {',
-    ...formatMutation(id)(bee.mutation).map(x => `\t${x}`),
+    ...bee.mutations.map(formatMutation(id)).map(x => `\t${x}`),
     '}'
   ];
 };

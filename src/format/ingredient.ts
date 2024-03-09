@@ -1,10 +1,10 @@
 import { Block, Item } from '../types/stack';
 
-const charStart = (char: string) => (x?: string) => x ?
+const charStart = (char: string) => (x?: string | number) => x ?
   `${char}${x}` :
   '';
 
-const charEnd = (char: string) => (x?: string) => x ?
+const charEnd = (char: string) => (x?: string | number) => x ?
   `${x}${char}` :
   '';
 
@@ -27,3 +27,6 @@ export const formatItem = (item: Item) => [
 
 export const formatCustom = (id: string) =>
   `S:gendustry:"${id}"`;
+
+export const formatOreDictionary = (id: string) =>
+  `OD:${id}`;

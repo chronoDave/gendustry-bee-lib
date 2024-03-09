@@ -4,12 +4,22 @@ export { default as formatBranch } from './format/branch';
 export {
   formatBlock,
   formatItem,
-  formatCustom
+  formatCustom,
+  formatOreDictionary
 } from './format/ingredient';
 export { default as formatTraits } from './format/traits';
+export { default as formatMutation } from './format/mutation';
+export { default as formatFlower } from './format/flower';
+export {
+  formatTemperature as formatRequirementTemperature,
+  formatHumidity as formatRequirementHumidity,
+  formatBiome as formatRequirementBiome,
+  formatBlock as formatRequirementBlock
+} from './format/requirement';
 
 export * as ALLELE from './const/allele';
-export * as BEE from './const/bee';
+export { HUMIDITY, TEMPERATURE, BIOME } from './const/bee';
+export { default as SPECIES } from './const/species';
 
 export type {
   Drop,

@@ -1,6 +1,11 @@
 import test from 'tape';
 
-import { formatBlock, formatItem, formatCustom } from './ingredient';
+import {
+  formatBlock,
+  formatItem,
+  formatCustom,
+  formatOreDictionary
+} from './ingredient';
 
 test('[formatBlock] formats block', t => {
   t.equal(
@@ -57,6 +62,16 @@ test('[formatCustom] formats custom', t => {
     formatCustom('custom'),
     'S:gendustry:"custom"',
     'formats custom'
+  );
+
+  t.end();
+});
+
+test('[formatOreDictionary] formats ore dictionary', t => {
+  t.equal(
+    formatOreDictionary('blockGold'),
+    'OD:blockGold',
+    'formats ore dictionary'
   );
 
   t.end();

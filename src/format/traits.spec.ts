@@ -24,3 +24,19 @@ test('[traits] formats boolean traits', t => {
 
   t.end();
 });
+
+test('[traits] formats custom flowers', t => {
+  t.true(
+    formatTraits({ base: '', flower: 'goldBlocks' })[1]
+      .includes('gendustry.flowersGoldBlocks'),
+    'formats custom flower'
+  );
+
+  t.false(
+    formatTraits({ base: '', flower: 'books' })[1]
+      .includes('gendustry.flowers'),
+    'formats known flower'
+  );
+
+  t.end();
+});

@@ -4,12 +4,12 @@ import {
   FLOWER,
   FLOWERING,
   LIFESPAN,
-  SPECIES,
   SPEED,
   TERRITORY,
   TOLERANCE
 } from '../const/allele';
-import { HUMIDITY, TEMPERATURE, BIOME } from '../const/bee';
+import SPECIES from '../const/species';
+import { HUMIDITY, TEMPERATURE } from '../const/bee';
 
 export type Drop = {
   n: number
@@ -26,7 +26,7 @@ export type Traits = {
   nocturnal?: boolean
   cave?: boolean
   rain?: boolean
-  flower?: keyof typeof FLOWER
+  flower?: keyof typeof FLOWER | string
   pollinate?: keyof typeof FLOWERING
   territory?: keyof typeof TERRITORY
   effect?: keyof typeof EFFECT
@@ -36,12 +36,7 @@ export type Mutation = {
   n: number
   left: keyof typeof SPECIES | string
   right: keyof typeof SPECIES | string
-  requirements?: {
-    temperature?: keyof typeof TEMPERATURE
-    humidity?: keyof typeof HUMIDITY
-    biome?: keyof typeof BIOME
-    block?: string
-  }
+  requirement?: string
 };
 
 export type Bee = {
@@ -53,18 +48,18 @@ export type Bee = {
     primary: string
     secondary: string
   }
-  drops?: {
-    regular?: Drop[]
-    special?: Drop[]
-  }
-  traits: Traits
-  mutation: Mutation
   dominant?: boolean
   glowing?: boolean
   secret?: boolean
   nocturnal?: boolean
   humidity?: keyof typeof HUMIDITY
   temperature?: keyof typeof TEMPERATURE
+  drops?: {
+    regular?: Drop[]
+    special?: Drop[]
+  }
+  traits: Traits
+  mutations: Mutation[]
 };
 
 export type Branch = {

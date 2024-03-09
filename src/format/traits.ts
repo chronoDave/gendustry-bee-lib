@@ -22,6 +22,12 @@ const formatConst = <T extends Record<string, string>>(obj: T, key: keyof T | un
   return obj[key];
 };
 
+const formatFlower = (x: string | undefined) => {
+  if (!x) return x;
+  if (x in FLOWER) return FLOWER[x as keyof typeof FLOWER];
+  return `gendustry.flowers${x[0].toUpperCase()}${x.slice(1)}`;
+};
+
 export default (traits: Traits) => [
   ['Base', traits.base],
   ['Speed', formatConst(SPEED, traits.speed)],
@@ -32,7 +38,7 @@ export default (traits: Traits) => [
   ['Nocturnal', formatBool(traits.nocturnal)],
   ['Cave_Dwelling', formatBool(traits.cave)],
   ['Tolerant_Flyer', formatBool(traits.rain)],
-  ['Flower_Provider', formatConst(FLOWER, traits.flower)],
+  ['Flower_Provider', formatFlower(traits.flower)],
   ['Flowering', formatConst(FLOWERING, traits.pollinate)],
   ['Territory', formatConst(TERRITORY, traits.territory)],
   ['Effect', formatConst(EFFECT, traits.effect)]
