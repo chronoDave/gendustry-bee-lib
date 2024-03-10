@@ -44,8 +44,9 @@ export default (branch: string) => (bee: Bee) => {
   return ({
     lang: [
       `gendustry.bees.species.${id}=${bee.name}`,
-      `gendustry.bees.species.${id}.description=${bee.description}`
-    ],
+      bee.description && `gendustry.bees.species.${id}.description=${bee.description}`
+    ]
+      .filter(x => x),
     cfg: {
       bee: [
         `cfg ${id} {`,

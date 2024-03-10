@@ -17,12 +17,13 @@ export default (id: string) => (branch: Branch) => {
   return ({
     lang: [
       `for.genus.${uid}=${branch.name}`,
-      `for.genus.${uid}.description=${branch.description}`,
+      branch.description && `for.genus.${uid}.description=${branch.description}`,
       ...bees.map(bee => bee.lang).flat()
-    ],
+    ]
+      .filter(x => x),
     cfg: [
       'cfg Branches {',
-      `\tcfg ${uid} {`,
+      `\tcfg ${camelCase(branch.name)} {`,
       `\t\tUID = "${uid}"`,
       '\t\tParent = apidae',
       `\t\tScientific = ${branch.name}`,
