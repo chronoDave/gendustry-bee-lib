@@ -1,10 +1,4 @@
-export type Block = {
-  id: string
-  mod?: string
-  meta?: string | number
-};
-
-export type Item = {
+export type Ingredient = {
   id: string
   mod?: string
   meta?: string | number
@@ -21,14 +15,14 @@ const charEnd = (char: string) => (x?: string | number) => x ?
 const formatColon = charEnd(':');
 const formatAt = charStart('@');
 
-export const formatBlock = (block: Block) => [
+export const formatBlock = (block: Ingredient) => [
   'B:',
   formatColon(block.mod),
   block.id,
   formatAt(block.meta)
 ].join('');
 
-export const formatItem = (item: Item) => [
+export const formatItem = (item: Ingredient) => [
   'I:',
   formatColon(item.mod),
   item.id,

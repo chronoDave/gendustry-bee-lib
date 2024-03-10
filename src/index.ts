@@ -1,9 +1,10 @@
 export type { Bee } from './format/bee';
 export type { Branch } from './format/branch';
-export type { Block, Item } from './format/ingredient';
+export type { Ingredient } from './format/ingredient';
 export type { Traits } from './format/traits';
 export type { Mutation } from './format/mutation';
 export type { Flower } from './format/flower';
+export type { Item } from './format/item';
 
 export { default as formatbee } from './format/bee';
 export { default as formatBranch } from './format/branch';

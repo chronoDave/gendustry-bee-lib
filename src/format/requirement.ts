@@ -1,4 +1,4 @@
-import type { Block } from './ingredient';
+import type { Ingredient } from './ingredient';
 
 import BIOME from '../const/biome';
 import HUMIDITY from '../const/humidity';
@@ -14,4 +14,4 @@ const formatConst = <T extends Record<string, string>>(obj: T) => (type: string)
 export const formatTemperature = formatConst(TEMPERATURE)('Temperature');
 export const formatHumidity = formatConst(HUMIDITY)('Humidity');
 export const formatBiome = formatConst(BIOME)('Biome');
-export const formatBlock = (block: Block) => formatRequirement('Block')(formatIngredientBlock(block));
+export const formatBlock = (block: Ingredient) => formatRequirement('Block')(formatIngredientBlock(block));
