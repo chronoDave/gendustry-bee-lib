@@ -6,6 +6,7 @@ import formatBee from './bee';
 
 export type Branch = {
   name: string
+  latin: string
   description?: string
   bees: Bee[]
 };
@@ -26,7 +27,7 @@ export default (id: string) => (branch: Branch) => {
       `\tcfg ${camelCase(branch.name)} {`,
       `\t\tUID = "${uid}"`,
       '\t\tParent = apidae',
-      `\t\tScientific = ${branch.name}`,
+      `\t\tScientific = ${branch.latin}`,
       '\t}',
       '}',
       '',

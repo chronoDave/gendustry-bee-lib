@@ -147,15 +147,18 @@ const branch = formatBranch('gendustry')({
  - [`formatBranch`](#formatbranch)
  - [`formatBee`](#formatbee)
  - [`formatMutation`](#formatmutation)
+ - [`formatTraits`](#formattraits)
+ - [`formatFlower](#formatflower)
  - [`formatRequirementTemperature`](#formatrequirementtemperature)
  - [`formatRequirementHumidity`](#formatrequirementhumidity)
  - [`formatRequirementBiome`](#formatrequirementbiome)
  - [`formatRequirementBlock`](#formatrequirementblock)
- - [`formatTraits`](#formattraits)
- - [`formatDrop`](#formatdrop)
  - [`formatBlock`](#formatblock)
  - [`formatItem](#formatitem)
  - [`formatCustom`](#formatcustom)
+ - [`formatOreDictionary`](#formatoredictionary)
+ - [`formatHoneyComb](#formathoneycomb)
+ - [`formatHoneyDrop](#formathoneydrop)
 
 ### `formatBranch`
 
@@ -173,6 +176,14 @@ Also creates [Localization](https://bdew.net/gendustry/configuration/custom-loca
 
 Creates [Mutation](https://bdew.net/gendustry/configuration/mutation-recipes/) "recipes".
 
+### `formatTraits`
+
+Creates bee [Traits](https://bdew.net/gendustry/configuration/adding-custom-bees/adding-bee-species/).
+
+### `formatFlower`
+
+Creates [Flower](https://github.com/bdew-minecraft/gendustry/blob/mc1710/example_configs/example_bees.cfg#L69) used in [`formatBee`](#formatbee).
+
 ### `formatRequirementTemperature`
 
 Creates temperature requirement used in [`formatMutation`](#formatmutation).
@@ -189,22 +200,30 @@ Creates biome requirement used in [`formatMutation`](#formatmutation).
 
 Creates block requirement used in [`formatMutation`](#formatmutation).
 
-### `formatTraits`
-
-Creates bee [Traits](https://bdew.net/gendustry/configuration/adding-custom-bees/adding-bee-species/).
-
-### `formatDrop`
-
-Formats drops used in [Drops List](https://bdew.net/bacon/configuration-sections/drops-list/).
-
 ### `formatBlock`
 
-Formats blocks used in [`formatDrop`](#formatdrop).
+Formats blocks used in [Drops List](https://bdew.net/bacon/configuration-sections/drops-list/).
 
 ### `formatItem`
 
-Formats items used in [`formatDrop`](#formatdrop).
+Formats items used in [Drops List](https://bdew.net/bacon/configuration-sections/drops-list/).
 
 ### `formatCustom`
 
-Formats custom items (combs / honeydrops) used in [`formatDrop`](#formatdrop).
+Formats custom items (honeycomb / honeydrop) used in [Drops List](https://bdew.net/bacon/configuration-sections/drops-list/).
+
+### `formatOreDictionary`
+
+Formats ore dictionary items used in [Drops List](https://bdew.net/bacon/configuration-sections/drops-list/).
+
+### `formatHoneyComb`
+
+Creates [Honey Comb](https://bdew.net/gendustry/configuration/adding-custom-bees/adding-honey-drops-and-combs/).
+
+Also creates [Localization](https://bdew.net/gendustry/configuration/custom-localization-files/) data.
+
+### `formatHoneyDrop`
+
+Creates [Honey Drop](https://bdew.net/gendustry/configuration/adding-custom-bees/adding-honey-drops-and-combs/).
+
+Also creates [Localization](https://bdew.net/gendustry/configuration/custom-localization-files/) data.
