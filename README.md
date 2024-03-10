@@ -59,6 +59,12 @@ const flower = formatFlower({
   spread: formatOreDictionary('oreGold')
 });
 
+/**
+ * {
+ *  cfg: string[],
+ *  lang: string[]
+ * }
+ */
 const branch = formatBranch('gendustry')({
   name: 'test',
   latin: 'Testis',
@@ -102,9 +108,10 @@ const branch = formatBranch('gendustry')({
 });
 
 fs.writeFileSync('example_bees.cfg', [
-  branch.join('\n'),
+  branch.cfg.join('\n'),
   flower.join('\n')
 ].join('\n'));
+fs.writeFileSync('example_bees.en_US.lang', branch.lang.join('\n'));
 ```
 
 ## API

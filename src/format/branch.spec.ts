@@ -10,11 +10,11 @@ test('[branch] formats branch', t => {
   });
 
   t.true(
-    branch[1].includes('name'),
+    branch.cfg[1].includes('name'),
     'lowercases name'
   );
   t.true(
-    branch[2].includes('branch.name'),
+    branch.cfg[2].includes('branch.name'),
     'merges id and name'
   );
 
