@@ -1,17 +1,23 @@
-export { default as formatbee, Bee } from './format/bee';
-export { default as formatDrop, Drop } from './format/drop';
-export { default as formatBranch, Branch } from './format/branch';
+export type { Bee } from './format/bee';
+export type { Drop } from './format/drop';
+export type { Branch } from './format/branch';
+export type { Block, Item } from './format/ingredient';
+export type { Traits } from './format/traits';
+export type { Mutation } from './format/mutation';
+export type { Flower } from './format/flower';
+
+export { default as formatbee } from './format/bee';
+export { default as formatDrop } from './format/drop';
+export { default as formatBranch } from './format/branch';
 export {
-  Block,
-  Item,
   formatBlock,
   formatItem,
   formatCustom,
   formatOreDictionary
 } from './format/ingredient';
-export { default as formatTraits, Traits } from './format/traits';
-export { default as formatMutation, Mutation } from './format/mutation';
-export { default as formatFlower, Flower } from './format/flower';
+export { default as formatTraits } from './format/traits';
+export { default as formatMutation } from './format/mutation';
+export { default as formatFlower } from './format/flower';
 export {
   formatTemperature as formatRequirementTemperature,
   formatHumidity as formatRequirementHumidity,
