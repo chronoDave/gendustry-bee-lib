@@ -59,7 +59,7 @@ export default (branch: string) => (bee: Bee) => {
       `\tHumidity = ${bee.humidity ?? 'Normal'}`,
       `\tTemperatue = ${bee.temperature ?? 'Normal'}`,
       `\tNocturnal = ${formatBool(bee.nocturnal)}`,
-      `\tBinominal = ${bee.latin}`,
+      `\tBinominal = ${bee.latin.toLowerCase()}`,
       `\tAuthority = ${formatAuthor(bee.author)}`,
       `\tBranch = ${branch}`,
       '\tProducts = DropsList(',
