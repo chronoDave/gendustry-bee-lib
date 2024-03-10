@@ -26,22 +26,22 @@ test('[bee] formats bee', t => {
   const bee = formatBee(branch)(data);
 
   t.true(
-    bee.cfg[0].includes(data.name.toLowerCase()),
+    bee.cfg.bee[0].includes(data.name.toLowerCase()),
     'lowercases bee name'
   );
 
   t.true(
-    bee.cfg[1].includes('No'),
+    bee.cfg.bee[1].includes('No'),
     'formats undefined boolean'
   );
 
   t.true(
-    bee.cfg[2].includes('Yes'),
+    bee.cfg.bee[2].includes('Yes'),
     'formats true'
   );
 
   t.true(
-    bee.cfg[8].includes('No'),
+    bee.cfg.bee[8].includes('No'),
     'formats false'
   );
 
@@ -68,7 +68,7 @@ test('[bee] limits author field', t => {
   });
 
   t.true(
-    bee.cfg[10].includes('Chron.'),
+    bee.cfg.bee[10].includes('Chron.'),
     'concatenates author'
   );
 
