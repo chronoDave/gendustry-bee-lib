@@ -20,6 +20,7 @@ export {
 export * as ALLELE from './const/allele';
 export { HUMIDITY, TEMPERATURE, BIOME } from './const/bee';
 export { default as SPECIES } from './const/species';
+export { default as BRANCHES } from './const/branches';
 
 export type {
   Drop,
