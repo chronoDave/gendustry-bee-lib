@@ -38,8 +38,9 @@ const formatConst = <T extends Record<string, string>>(obj: T, key: keyof T | un
 };
 
 const formatFlower = (x: string | undefined) => {
-  if (!x) return x;
-  if (x in FLOWER) return FLOWER[x as keyof typeof FLOWER];
+  if (!x || Object.values(FLOWER).some(v => v === x)) return x;
+  if (Object.keys(FLOWER).some(k => k === x)) return FLOWER[x as keyof typeof FLOWER];
+
   return `gendustry.flowers${x[0].toUpperCase()}${x.slice(1)}`;
 };
 

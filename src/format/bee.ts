@@ -68,13 +68,16 @@ export default (branch: string) => (bee: Bee) => {
       '\tSpeciality = DropsList(',
       ...(bee.drops?.special?.map(formatDrop).map(x => `\t\t${x}`) ?? []),
       '\t)',
+      '',
       '\tcfg Traits {',
       ...formatTraits(bee.traits).map(x => `\t\t${x}`),
       '\t}',
       '}',
       '',
       'recipes {',
-      ...bee.mutations.map(formatMutation(id)).map(x => `\t${x}`),
+      ...bee.mutations
+        .map(formatMutation(id))
+        .map(x => `\t${x.join(' ')}`),
       '}'
     ]
   });

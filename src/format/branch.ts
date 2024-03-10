@@ -27,7 +27,10 @@ export default (id: string) => (branch: Branch) => {
       '}',
       '',
       'cfg Bees {',
-      ...bees.map(bee => `\t${bee.cfg}`),
+      ...bees
+        .map(bee => bee.cfg)
+        .flat()
+        .map(cfg => `\t${cfg}`),
       '}'
     ]
   });

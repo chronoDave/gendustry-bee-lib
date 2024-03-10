@@ -1,5 +1,7 @@
 import test from 'tape';
 
+import { FLOWER } from '../const/allele';
+
 import formatTraits from './traits';
 
 test('[traits] formats boolean traits', t => {
@@ -33,9 +35,15 @@ test('[traits] formats custom flowers', t => {
   );
 
   t.false(
-    formatTraits({ base: '', flower: 'books' })[1]
+    formatTraits({ base: '', flower: 'nether' })[1]
       .includes('gendustry.flowers'),
-    'formats known flower'
+    'formats known flower key'
+  );
+
+  t.false(
+    formatTraits({ base: '', flower: FLOWER.nether })[1]
+      .includes('gendustry.flowers'),
+    'formats known flower value'
   );
 
   t.end();
