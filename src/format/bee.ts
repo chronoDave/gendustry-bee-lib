@@ -46,36 +46,42 @@ export default (branch: string) => (bee: Bee) => {
       `gendustry.bees.species.${id}=${bee.name}`,
       bee.description && `gendustry.bees.species.${id}.description=${bee.description}`
     ]
-      .filter(x => x),
+      .filter(x => x) as string[],
     cfg: {
       bee: [
-        `cfg ${id} {`,
-        `\tDominant = ${formatBool(bee.dominant)}`,
-        `\tGlowing = ${formatBool(bee.glowing)}`,
-        `\tPrimaryColor = ${formatHex(bee.color.primary)}`,
-        `\tSecondaryColor = ${formatHex(bee.color.secondary)}`,
-        `\tSecret = ${formatBool(bee.secret)}`,
-        `\tHumidity = ${bee.humidity ?? 'Normal'}`,
-        `\tTemperature = ${bee.temperature ?? 'Normal'}`,
-        `\tNocturnal = ${formatBool(bee.nocturnal)}`,
-        `\tBinominal = ${bee.latin.toLowerCase()}`,
-        `\tAuthority = ${formatAuthor(bee.author)}`,
-        `\tBranch = "${branch}"`,
-        '\tProducts = DropsList(',
-        ...(bee.drops?.regular?.map(formatDrop).map(x => `\t\t${x}`) ?? []),
-        '\t)',
-        '\tSpecialty = DropsList(',
-        ...(bee.drops?.special?.map(formatDrop).map(x => `\t\t${x}`) ?? []),
-        '\t)',
+        'cfg Bees {',
+        `\tcfg ${id} {`,
+        `\t\tDominant = ${formatBool(bee.dominant)}`,
+        `\t\tGlowing = ${formatBool(bee.glowing)}`,
+        `\t\tPrimaryColor = ${formatHex(bee.color.primary)}`,
+        `\t\tSecondaryColor = ${formatHex(bee.color.secondary)}`,
+        `\t\tSecret = ${formatBool(bee.secret)}`,
+        `\t\tHumidity = ${bee.humidity ?? 'Normal'}`,
+        `\t\tTemperature = ${bee.temperature ?? 'Normal'}`,
+        `\t\tNocturnal = ${formatBool(bee.nocturnal)}`,
+        `\t\tBinominal = ${bee.latin.toLowerCase()}`,
+        `\t\tAuthority = ${formatAuthor(bee.author)}`,
+        `\t\tBranch = "${branch}"`,
+        '\t\tProducts = DropsList(',
+        ...(bee.drops?.regular?.map(formatDrop).map(x => `\t\t\t${x}`) ?? []),
+        '\t\t)',
+        '\t\tSpecialty = DropsList(',
+        ...(bee.drops?.special?.map(formatDrop).map(x => `\t\t\t${x}`) ?? []),
+        '\t\t)',
         '',
-        '\tcfg Traits {',
-        ...formatTraits(bee.traits).map(x => `\t\t${x}`),
+        '\t\tcfg Traits {',
+        ...formatTraits(bee.traits).map(x => `\t\t\t${x}`),
+        '\t\t}',
         '\t}',
-        '}',
+        '}'
       ],
-      mutations: bee.mutations
-        .map(formatMutation(id))
-        .map(x => x.join(' '))
+      mutations: [
+        'recipes {',
+        bee.mutations
+          .map(formatMutation(id))
+          .map(x => `\t${x.join(' ')}`),
+        '}'
+      ]
     }
   });
 };

@@ -20,7 +20,7 @@ export default (id: string) => (branch: Branch) => {
       branch.description && `for.genus.${uid}.description=${branch.description}`,
       ...bees.map(bee => bee.lang).flat()
     ]
-      .filter(x => x),
+      .filter(x => x) as string[],
     cfg: [
       'cfg Branches {',
       `\tcfg ${camelCase(branch.name)} {`,
@@ -32,16 +32,12 @@ export default (id: string) => (branch: Branch) => {
       '',
       'cfg Bees {',
       ...bees
-        .map(bee => bee.cfg.bee)
-        .flat()
-        .map(cfg => `\t${cfg}`),
+        .map(bee => bee.cfg.bee.slice(1, -1))
+        .flat(),
       '}',
       '',
       'recipes {',
-      ...bees
-        .map(bee => bee.cfg.mutations)
-        .flat()
-        .map(mutation => `\t${mutation}`),
+      ...bees.map(bee => bee.cfg.mutations[1]).flat(),
       '}'
     ]
   });
