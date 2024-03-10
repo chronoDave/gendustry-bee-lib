@@ -6,7 +6,7 @@ export type { Mutation } from './format/mutation';
 export type { Flower } from './format/flower';
 export type { Item } from './format/item';
 
-export { default as formatbee } from './format/bee';
+export { default as formatBee } from './format/bee';
 export { default as formatBranch } from './format/branch';
 export {
   formatBlock,
