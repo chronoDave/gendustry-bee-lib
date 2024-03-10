@@ -1,8 +1,36 @@
-import { Bee } from '../types/bee';
+import type { Drop } from './drop';
+import type { Traits } from './traits';
+import type { Mutation } from './mutation';
+import type TEMPERATURE from '../const/temperature';
+import type HUMIDITY from '../const/humidity';
 
 import formatDrop from './drop';
 import formatTraits from './traits';
+
 import formatMutation from './mutation';
+
+export type Bee = {
+  name: string
+  latin: string
+  author: string
+  description?: string
+  color: {
+    primary: string
+    secondary: string
+  }
+  dominant?: boolean
+  glowing?: boolean
+  secret?: boolean
+  nocturnal?: boolean
+  humidity?: keyof typeof HUMIDITY
+  temperature?: keyof typeof TEMPERATURE
+  drops?: {
+    regular?: Drop[]
+    special?: Drop[]
+  }
+  traits: Traits
+  mutations: Mutation[]
+};
 
 const formatBool = (x?: boolean) => x ? 'Yes' : 'No';
 const formatHex = (x: string) => {

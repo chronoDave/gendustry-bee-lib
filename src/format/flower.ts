@@ -1,4 +1,9 @@
-import { Flower } from '../types/flower';
+export type Flower = {
+  id: string
+  flowers: string[]
+  spread: string | { id: string, n?: number }
+  dominant?: boolean
+};
 
 const formatSpread = (spread: Flower['spread']) => {
   if (typeof spread === 'string') return `${spread} 1.0`;

@@ -1,5 +1,8 @@
-import { Block } from '../types/stack';
-import { BIOME, HUMIDITY, TEMPERATURE } from '../const/bee';
+import type { Block } from './ingredient';
+
+import BIOME from '../const/biome';
+import HUMIDITY from '../const/humidity';
+import TEMPERATURE from '../const/temperature';
 
 import { formatBlock as formatIngredientBlock } from './ingredient';
 

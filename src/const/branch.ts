@@ -1,4 +1,4 @@
-export const BRANCHES = {
+const BRANCH = {
   honey: 'genus.bees.honey',
   noble: 'genus.bees.noble',
   industrious: 'genus.bees.industrious',
@@ -45,4 +45,4 @@ export const BRANCHES = {
   patreon: 'genus.gendustry.patreon',
 } as const;
 
-export default BRANCHES;
+export default BRANCH;

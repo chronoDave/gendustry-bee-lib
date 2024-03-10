@@ -1,5 +1,11 @@
 import { clamp } from '../lib/math';
-import { Mutation } from '../types/bee';
+
+export type Mutation = {
+  n: number
+  left: string
+  right: string
+  requirement?: string
+};
 
 export default (id: string) => (mutation: Mutation) => [
   'mutation:',

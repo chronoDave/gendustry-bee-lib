@@ -1,4 +1,14 @@
-import { Block, Item } from '../types/stack';
+export type Block = {
+  id: string
+  mod?: string
+  meta?: string | number
+};
+
+export type Item = {
+  id: string
+  mod?: string
+  meta?: string | number
+};
 
 const charStart = (char: string) => (x?: string | number) => x ?
   `${char}${x}` :

@@ -1,6 +1,12 @@
-import { Branch } from '../types/bee';
+import type { Bee } from './bee';
 
 import formatBee from './bee';
+
+export type Branch = {
+  name: string
+  latin: string
+  bees: Bee[]
+};
 
 export default (id: string) => (branch: Branch) => {
   const name = branch.name.toLowerCase();

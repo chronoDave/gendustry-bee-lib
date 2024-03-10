@@ -1,4 +1,3 @@
-import { Traits } from '../types/bee';
 import {
   EFFECT,
   FLOWER,
@@ -9,6 +8,22 @@ import {
   TERRITORY,
   TOLERANCE
 } from '../const/allele';
+
+export type Traits = {
+  base: string
+  speed?: keyof typeof SPEED
+  lifespan?: keyof typeof LIFESPAN
+  fertility?: keyof typeof FERTILITY
+  temperature?: keyof typeof TOLERANCE
+  humidity?: keyof typeof TOLERANCE
+  nocturnal?: boolean
+  cave?: boolean
+  rain?: boolean
+  flower?: keyof typeof FLOWER | string
+  pollinate?: keyof typeof FLOWERING
+  territory?: keyof typeof TERRITORY
+  effect?: keyof typeof EFFECT
+};
 
 const formatBool = (x: undefined | boolean) => {
   if (typeof x !== 'boolean') return x;

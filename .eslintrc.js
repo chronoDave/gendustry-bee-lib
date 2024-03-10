@@ -12,6 +12,7 @@ module.exports = {
     // TypeScript
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/lines-between-class-members': 'off',
+    '@typescript-eslint/consistent-type-imports': 'error',
     // General
     'operator-linebreak': ['error', 'after'],
     'implicit-arrow-linebreak': 'off',
@@ -35,6 +36,7 @@ module.exports = {
     'import/order': ['error', {
       'newlines-between': 'always-and-inside-groups',
       groups: [
+        'type',
         'builtin',
         'external',
         'internal',

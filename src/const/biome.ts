@@ -1,20 +1,4 @@
-export const HUMIDITY = {
-  arid: 'Arid',
-  normal: 'Normal',
-  damp: 'Damp'
-} as const;
-
-export const TEMPERATURE = {
-  none: 'None',
-  icy: 'Icy',
-  cold: 'Cold',
-  normal: 'Nomal',
-  warm: 'Warm',
-  hot: 'Hot',
-  hellish: 'Hellish'
-} as const;
-
-export const BIOME = {
+const BIOME = {
   beach: 'Beach',
   birchForest: 'Birch Forest',
   birchForestHills: 'Birch Forest Hills',
@@ -45,3 +29,5 @@ export const BIOME = {
   jungle: 'Jungle',
   jungleM: 'Jungle M'
 } as const;
+
+export default BIOME;

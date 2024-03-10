@@ -103,8 +103,8 @@ const branch = formatBranch('gendustry')({
 
 fs.writeFileSync('example_bees.cfg', [
   branch.join('\n'),
-  flower.join('\n)
-].join('\n));
+  flower.join('\n')
+].join('\n'));
 ```
 
 ## API
