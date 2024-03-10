@@ -25,7 +25,16 @@ export {
   formatBlock as formatRequirementBlock
 } from './format/requirement';
 
-export * as ALLELE from './const/allele';
+export {
+  EFFECT,
+  FLOWER,
+  FERTILITY,
+  FLOWERING,
+  LIFESPAN,
+  SPEED,
+  TERRITORY,
+  TOLERANCE
+} from './const/allele';
 export { default as HUMIDITY } from './const/humidity';
 export { default as SPECIES } from './const/species';
 export { default as TEMPERATURE } from './const/temperature';
