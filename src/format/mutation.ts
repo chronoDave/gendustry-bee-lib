@@ -14,7 +14,7 @@ export default (id: string) => (mutation: Mutation) => [
   '+',
   `"${mutation.right}"`,
   '=>',
-  `"${id}"`,
+  `"gendustry.bee.${id}"`,
   mutation.requirement
 ]
   .filter(x => x) as string[];

@@ -6,7 +6,7 @@ import { formatBiome } from './requirement';
 test('[mutation] formats mutation', t => {
   t.equal(
     formatMutation('test')({ left: 'left', right: 'right', n: 0.2 }).join(' '),
-    'mutation: 20% "left" + "right" => "test"',
+    'mutation: 20% "left" + "right" => "gendustry.bee.test"',
     'formats mutation'
   );
 
