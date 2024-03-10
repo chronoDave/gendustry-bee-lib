@@ -15,7 +15,7 @@ export default (id: string) => (branch: Branch) => {
   return ({
     lang: [
       `for.genus.${uid}=${branch.name}`,
-      ...bees.map(bee => bee.lang)
+      ...bees.map(bee => bee.lang).flat()
     ],
     cfg: [
       'cfg Branches {',
