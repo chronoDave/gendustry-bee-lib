@@ -37,6 +37,8 @@ import {
   formatCustom,
   formatFlower,
   formatOreDictionary,
+  formatHoneyComb,
+  formatHoneyDrop,
   formatRequirementTemperature,
   formatRequirementBiome,
   formatRequirementBlock,
@@ -45,18 +47,51 @@ import {
   TEMPERATURE
 } from 'gendustry-bee-lib';
 
-const FLOWERS = {
-  goldBlock: 'goldBlocks'
-} as const;
-
+/**
+ * {
+ *  id: string
+ *  cfg: string[]
+ *  lang: string
+ * }
+ */
 const flower = formatFlower({
-  id: FLOWERS.goldBlock,
+  name: 'Gold Blocks',
   dominant: true,
   flowers: [
     formatOreDictionary('blockGold'),
     formatOreDictionary('blockIron')
   ],
   spread: formatOreDictionary('oreGold')
+});
+
+/**
+ * {
+ *  id: string
+ *  cfg: string[]
+ *  lang: string
+ * }
+ */
+const honeyComb = formatHoneyComb(13337)({
+  name: 'Test Comb',
+  color: {
+    primary: '#ff0000',
+    secondary: '#0000ff'
+  }
+});
+
+/**
+ * {
+ *  id: string
+ *  cfg: string[]
+ *  lang: string
+ * }
+ */
+const honeyDrop = formatHoneyDrop(13337)({
+  name: 'Test Honey Drop',
+  color: {
+    primary: '#ff0000',
+    secondary: '#0000ff'
+  }
 });
 
 /**
@@ -78,14 +113,14 @@ const branch = formatBranch('gendustry')({
     dominant: true,
     drops: {
       regular: [{
-        id: formatCustom('HoneyComb.test'),
+        id: formatCustom(honeyComb.id),
         n: 0.3
       }]
     },
     traits: {
       base: SPECIES.forest,
       nocturnal: true,
-      flower: FLOWERS.goldBlock
+      flower: flower.id
     },
     mutations: [{
       n: 0.1,
@@ -105,12 +140,6 @@ const branch = formatBranch('gendustry')({
     }]
   }];
 });
-
-fs.writeFileSync('example_bees.cfg', [
-  branch.cfg.join('\n'),
-  flower.join('\n')
-].join('\n'));
-fs.writeFileSync('example_bees.en_US.lang', branch.lang.join('\n'));
 ```
 
 ## API

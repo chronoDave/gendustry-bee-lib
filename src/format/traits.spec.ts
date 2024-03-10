@@ -30,7 +30,7 @@ test('[traits] formats boolean traits', t => {
 test('[traits] formats custom flowers', t => {
   t.true(
     formatTraits({ base: '', flower: 'goldBlocks' })[1]
-      .includes('gendustry.flowersGoldBlocks'),
+      .includes('goldBlocks'),
     'formats custom flower'
   );
 

@@ -1,5 +1,7 @@
+import { camelCase, pascalCase } from '../lib/string';
+
 export type Flower = {
-  id: string
+  name: string
   flowers: string[]
   spread: string | { id: string, n?: number }
   dominant?: boolean
@@ -10,10 +12,14 @@ const formatSpread = (spread: Flower['spread']) => {
   return `${spread.id} ${spread.n}`;
 };
 
-export default (flower: Flower) => [
-  `FlowerAllele ${flower.id} {`,
-  `\t${flower.dominant ? 'Dominant' : 'Recessive'}`,
-  `\tAccepts ${flower.flowers.join(', ')}`,
-  `\tSpread ${formatSpread(flower.spread)}`,
-  '}'
-];
+export default (flower: Flower) => ({
+  id: `gendustry.flowers${pascalCase(flower.name)}`,
+  lang: `gendustry.allele.flowers.${camelCase(flower.name)}=${flower.name}`,
+  cfg: [
+    `FlowerAllele ${camelCase(flower.name)} {`,
+    `\t${flower.dominant ? 'Dominant' : 'Recessive'}`,
+    `\tAccepts ${flower.flowers.join(', ')}`,
+    `\tSpread ${formatSpread(flower.spread)}`,
+    '}'
+  ]
+});

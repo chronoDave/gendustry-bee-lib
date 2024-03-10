@@ -1,12 +1,13 @@
-import type { Drop } from './drop';
 import type { Traits } from './traits';
 import type { Mutation } from './mutation';
 import type TEMPERATURE from '../const/temperature';
 import type HUMIDITY from '../const/humidity';
+import type { Drop } from '../lib/format';
 
-import formatDrop from './drop';
+import { formatHex, formatDrop } from '../lib/format';
+import { camelCase } from '../lib/string';
+
 import formatTraits from './traits';
-
 import formatMutation from './mutation';
 
 export type Bee = {
@@ -33,16 +34,12 @@ export type Bee = {
 };
 
 const formatBool = (x?: boolean) => x ? 'Yes' : 'No';
-const formatHex = (x: string) => {
-  if (!/^#[0-9A-F]{6}$/i.test(x)) throw new Error('Invalid hex code');
-  return `0x${x.slice(1).toUpperCase()}`;
-};
 const formatAuthor = (x: string) => x.length > 6 ?
   `${x.slice(0, 5)}.` :
   x;
 
 export default (branch: string) => (bee: Bee) => {
-  const id = bee.name.toLowerCase();
+  const id = camelCase(bee.name);
 
   return ({
     lang: [

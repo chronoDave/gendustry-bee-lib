@@ -1,5 +1,7 @@
 import type { Bee } from './bee';
 
+import { camelCase } from '../lib/string';
+
 import formatBee from './bee';
 
 export type Branch = {
@@ -9,8 +11,7 @@ export type Branch = {
 };
 
 export default (id: string) => (branch: Branch) => {
-  const name = branch.name.toLowerCase();
-  const uid = `${id}.${name}`;
+  const uid = `${id}.${camelCase(branch.name)}`;
   const bees = branch.bees.map(formatBee(uid));
 
   return ({
@@ -21,7 +22,7 @@ export default (id: string) => (branch: Branch) => {
     ],
     cfg: [
       'cfg Branches {',
-      `\tcfg ${name} {`,
+      `\tcfg ${uid} {`,
       `\t\tUID = "${uid}"`,
       '\t\tParent = apidae',
       `\t\tScientific = ${branch.name}`,
