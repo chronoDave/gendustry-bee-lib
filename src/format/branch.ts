@@ -4,7 +4,6 @@ import formatBee from './bee';
 
 export type Branch = {
   name: string
-  latin: string
   bees: Bee[]
 };
 
@@ -15,7 +14,7 @@ export default (id: string) => (branch: Branch) => {
 
   return ({
     lang: [
-      `for.genus.${uid}=${branch.latin}`,
+      `for.genus.${uid}=${branch.name}`,
       ...bees.map(bee => bee.lang)
     ],
     cfg: [
@@ -23,7 +22,7 @@ export default (id: string) => (branch: Branch) => {
       `\tcfg ${name} {`,
       `\t\tUID = ${uid}`,
       '\t\tParent = apidae',
-      `\t\tScientific = ${branch.latin}`,
+      `\t\tScientific = ${branch.name}`,
       '\t}',
       '}',
       '',

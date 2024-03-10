@@ -5,7 +5,6 @@ import formatBranch from './branch';
 test('[branch] formats branch', t => {
   const branch = formatBranch('branch')({
     name: 'Name',
-    latin: 'latin',
     bees: []
   });
 

@@ -70,7 +70,6 @@ const branch = formatBranch('gendustry')({
   latin: 'Testis',
   bees: [{
     name: 'Test',
-    latin: 'Test',
     author: 'BDEW',
     color: {
       primary: '#FF0000',
