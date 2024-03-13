@@ -17,7 +17,7 @@ const formatItem = (type: string) => (id: number) => (item: Item) => ({
     `\tcfg ${camelCase(item.name)} {`,
     `\t\tID = ${id}`,
     `\t\tPrimaryColor = ${formatHex(item.color.primary)}`,
-    `\t\tSecondaryColor = ${formatHex(item.color.primary)}`,
+    `\t\tSecondaryColor = ${formatHex(item.color.secondary)}`,
     '\t}',
     '}'
   ]
