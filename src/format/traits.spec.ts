@@ -12,11 +12,11 @@ test('[traits] formats boolean traits', t => {
   });
 
   t.true(
-    traits[1].includes('forestry.allele.false'),
+    traits[1].includes('forestry.boolFalse'),
     'formats falsy boolean'
   );
   t.true(
-    traits[2].includes('forestry.allele.true'),
+    traits[2].includes('forestry.boolTrue'),
     'formats truthy boolean'
   );
   t.true(

@@ -28,8 +28,8 @@ export type Traits = {
 const formatBool = (x: undefined | boolean) => {
   if (typeof x !== 'boolean') return x;
   return x ?
-    'forestry.allele.true' :
-    'forestry.allele.false';
+    'forestry.boolTrue' :
+    'forestry.boolFalse';
 };
 
 const formatConst = <T extends Record<string, string>>(obj: T, key: keyof T | undefined) => {
