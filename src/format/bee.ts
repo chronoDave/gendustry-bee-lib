@@ -14,7 +14,7 @@ export type Bee = {
   latin: string
   /** Truncated at 7 characters or more */
   author: string
-  description?: string
+  description?: string | { text: string, author: string }
   color: {
     primary: string
     secondary: string
@@ -37,6 +37,12 @@ const formatAuthor = (x: string) => x.length > 6 ?
   `${x.slice(0, 5)}.` :
   x;
 
+const formatDescription = (x: Bee['description']) => {
+  if (!x) return null;
+  if (typeof x === 'string') return x;
+  return `"${x.text}"|${x.author}`;
+};
+
 /**
  * @see [Adding Bee Species - BDew](https://bdew.net/gendustry/configuration/adding-custom-bees/adding-bee-species/)
  */
@@ -46,7 +52,7 @@ export const formatBee = (bee: Bee) => {
   return ({
     lang: [
       `gendustry.bees.species.${id}=${bee.name}`,
-      bee.description && `gendustry.bees.species.${id}.description=${bee.description}`
+      bee.description && `gendustry.bees.species.${id}.description=${formatDescription(bee.description)}`
     ]
       .filter(x => x) as string[],
     cfg: [
