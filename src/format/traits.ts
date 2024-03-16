@@ -1,29 +1,27 @@
-import {
-  EFFECT,
-  FLOWER,
-  FERTILITY,
-  POLLINATION,
-  LIFESPAN,
-  SPEED,
-  TERRITORY,
-  TOLERANCE
-} from '../const/allele';
-
 export type Traits = {
-  /** Must use {@link SPECIES}, does not work with custom bees */
+  /** {@link SPECIES} */
   base: string
-  speed?: keyof typeof SPEED
-  lifespan?: keyof typeof LIFESPAN
-  fertility?: keyof typeof FERTILITY
-  temperature?: keyof typeof TOLERANCE
-  humidity?: keyof typeof TOLERANCE
+  /** {@link SPEED} */
+  speed?: string
+  /** {@link LIFESPAN} */
+  lifespan?: string
+  /** {@link FERTILITY} */
+  fertility?: string
+  /** {@link TEMPERATURE} */
+  temperature?: string
+  /** {@link HUMIDITY} */
+  humidity?: string
   nocturnal?: boolean
   cave?: boolean
   rain?: boolean
-  flower?: keyof typeof FLOWER | string
-  pollination?: keyof typeof POLLINATION
-  territory?: keyof typeof TERRITORY
-  effect?: keyof typeof EFFECT
+  /** {@link FLOWER} */
+  flower?: string
+  /** {@link POLLINATION} */
+  pollination?: string
+  /** {@link TERRITORY} */
+  territory?: string
+  /** {@link EFFECT} */
+  effect?: string
 };
 
 const formatBool = (x: undefined | boolean) => {
@@ -33,30 +31,20 @@ const formatBool = (x: undefined | boolean) => {
     'forestry.boolFalse';
 };
 
-const formatConst = <T extends Record<string, string>>(obj: T, key: keyof T | undefined) => {
-  if (!key) return key;
-  return obj[key];
-};
-
-const formatFlower = (x: string | undefined) => {
-  if (Object.keys(FLOWER).some(k => k === x)) return FLOWER[x as keyof typeof FLOWER];
-  return x;
-};
-
 export default (traits: Traits) => [
   ['Base', traits.base],
-  ['Speed', formatConst(SPEED, traits.speed)],
-  ['Lifespan', formatConst(LIFESPAN, traits.lifespan)],
-  ['Fertility', formatConst(FERTILITY, traits.fertility)],
-  ['Temperature_Tolerance', formatConst(TOLERANCE, traits.temperature)],
-  ['Humidity_Tolerance', formatConst(TOLERANCE, traits.humidity)],
+  ['Speed', traits.speed],
+  ['Lifespan', traits.lifespan],
+  ['Fertility', traits.fertility],
+  ['Temperature_Tolerance', traits.temperature],
+  ['Humidity_Tolerance', traits.humidity],
   ['Nocturnal', formatBool(traits.nocturnal)],
   ['Cave_Dwelling', formatBool(traits.cave)],
   ['Tolerant_Flyer', formatBool(traits.rain)],
-  ['Flower_Provider', formatFlower(traits.flower)],
-  ['Flowering', formatConst(POLLINATION, traits.pollination)],
-  ['Territory', formatConst(TERRITORY, traits.territory)],
-  ['Effect', formatConst(EFFECT, traits.effect)]
+  ['Flower_Provider', traits.flower],
+  ['Flowering', traits.pollination],
+  ['Territory', traits.territory],
+  ['Effect', traits.effect]
 ]
   .filter(([, x]) => x !== undefined)
   .map(([k, v]) => `${k} = "${v}"`);
