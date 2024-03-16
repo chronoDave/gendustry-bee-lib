@@ -36,7 +36,7 @@
     "lint": "eslint src",
     "build": "rollup -c",
     "test": "tsc && tape build/**/*.spec.js",
-    "docs": "typedoc src/index.ts",
+    "docs": "typedoc src/index.ts --includeVersion",
     "prepublishOnly": "npm run lint && npm run test && npm run build"
   },
   "devDependencies": {

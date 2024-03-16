@@ -118,9 +118,9 @@ export const FLOWER = {
  */
 export const FERTILITY = {
   /** 1x Drones */
-  normal: 'forestry.fertilityNormal',
-  /** 2x Drones */
   low: 'forestry.fertilityLow',
+  /** 2x Drones */
+  normal: 'forestry.fertilityNormal',
   /** 3x Drones */
   high: 'forestry.fertilityHigh',
   /** 4x Drones */
