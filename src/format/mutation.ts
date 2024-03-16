@@ -27,8 +27,8 @@ export const formatMutation = (mutation: Mutation) => [
   .filter(x => x)
   .join(' ');
 
-export const formatMutations = (mutations: Mutation[]) => [
+export const formatMutations = (mutations: string[] | Mutation[]) => [
   'recipes {',
-  ...mutations.map(formatMutation),
+  ...mutations.map(x => typeof x === 'string' ? x : formatMutation(x)),
   '}'
 ];
