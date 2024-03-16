@@ -5,6 +5,9 @@ export type { Traits } from './format/traits';
 export type { Mutation } from './format/mutation';
 export type { Flower } from './format/flower';
 export type { Item } from './format/item';
+export type { Stack } from './lib/format';
+export type { Centrifuge } from './format/centrifuge';
+export type { Squeezer } from './format/squeezer';
 
 export { formatBee, formatBees } from './format/bee';
 export { default as formatBranch } from './format/branch';
@@ -27,6 +30,8 @@ export {
   formatBiome as formatRequirementBiome,
   formatBlock as formatRequirementBlock
 } from './format/requirement';
+export { default as formatCentrifuge } from './format/centrifuge';
+export { default as formatSqueezer } from './format/squeezer';
 
 export {
   EFFECT,

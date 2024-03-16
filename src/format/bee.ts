@@ -1,9 +1,9 @@
 import type { Traits } from './traits';
 import type TEMPERATURE from '../const/temperature';
 import type HUMIDITY from '../const/humidity';
-import type { Drop } from '../lib/format';
+import type { Stack } from '../lib/format';
 
-import { formatHex, formatDrop } from '../lib/format';
+import { formatHex, formatStack } from '../lib/format';
 import { camelCase } from '../lib/string';
 
 import formatTraits from './traits';
@@ -26,8 +26,8 @@ export type Bee = {
   humidity?: keyof typeof HUMIDITY
   temperature?: keyof typeof TEMPERATURE
   drops?: {
-    regular?: Drop[]
-    special?: Drop[]
+    regular?: Stack[]
+    special?: Stack[]
   }
   traits: Traits
 };
@@ -63,10 +63,10 @@ export const formatBee = (bee: Bee) => {
       `\tAuthority = ${formatAuthor(bee.author)}`,
       `\tBranch = "${bee.branch}"`,
       '\tProducts = DropsList(',
-      ...(bee.drops?.regular?.map(formatDrop).map(x => `\t\t${x}`) ?? []),
+      ...(bee.drops?.regular?.map(formatStack).map(x => `\t\t${x}`) ?? []),
       '\t)',
       '\tSpecialty = DropsList(',
-      ...(bee.drops?.special?.map(formatDrop).map(x => `\t\t${x}`) ?? []),
+      ...(bee.drops?.special?.map(formatStack).map(x => `\t\t${x}`) ?? []),
       '\t)',
       '',
       '\tcfg Traits {',

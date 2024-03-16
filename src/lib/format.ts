@@ -1,13 +1,13 @@
 import { clamp } from './math';
 
-export type Drop = {
+export type Stack = {
   id: string,
   /** [0, 1] */
   n: number
 };
 
-export const formatDrop = (drop: Drop) =>
-  `${Math.round(clamp(0, 1, drop.n) * 100)}% ${drop.id}`;
+export const formatStack = (stack: Stack) =>
+  `${Math.round(clamp(0, 1, stack.n) * 100)}% ${stack.id}`;
 
 /**
  * @param x `#xxxxxx`

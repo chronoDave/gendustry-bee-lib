@@ -1,9 +1,11 @@
+import type { Stack } from '../lib/format';
+
 import { camelCase, pascalCase } from '../lib/string';
 
 export type Flower = {
   name: string
   flowers: string[]
-  spread: string | { id: string, n: number }
+  spread: string | Stack
   dominant?: boolean
 };
 
