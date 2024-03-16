@@ -26,4 +26,4 @@ _Note: This package requires Node >10.12.0 and Minecraft 1.7.10._
  - Sensible autofills, **create custom bees with less code**
  - Supports [Forestry](https://www.curseforge.com/minecraft/mc-mods/forestry), [ExtraBees](https://www.curseforge.com/minecraft/mc-mods/binnies-mods) and [Gendustry](https://www.curseforge.com/minecraft/mc-mods/gendustry).
 
-More information can be found in the [documentation](./docs).
+More information can be found in the [documentation](https://chronodave.github.io/gendustry-bee-lib/).
