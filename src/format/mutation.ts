@@ -29,6 +29,6 @@ export const formatMutation = (mutation: Mutation) => [
 
 export const formatMutations = (...mutations: string[] | Mutation[]) => [
   'recipes {',
-  ...mutations.map(x => typeof x === 'string' ? x : formatMutation(x)),
+  ...mutations.map(x => `\t${typeof x === 'string' ? x : formatMutation(x)}`),
   '}'
 ];

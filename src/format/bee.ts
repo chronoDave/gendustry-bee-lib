@@ -76,7 +76,7 @@ export const formatBee = (bee: Bee) => {
       '\t)',
       '',
       '\tcfg Traits {',
-      ...formatTraits(bee.traits).map(x => `\t\t\t${x}`),
+      ...formatTraits(bee.traits).map(x => `\t\t${x}`),
       '\t}',
       '}',
     ]
@@ -90,8 +90,8 @@ export const formatBees = (...bees: Bee[]) => {
     lang: formatted.map(bee => bee.lang).flat(),
     cfg: [
       'cfg Bees {',
-      ...formatted.map(bee => `${bee.cfg.map(l => `\t${l}`)}\n`).flat(),
-      'cfg }'
+      ...formatted.map(bee => bee.cfg.map(x => `\t${x}`).join('\n')),
+      '}'
     ]
   });
 };
