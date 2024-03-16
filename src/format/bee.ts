@@ -77,7 +77,7 @@ export const formatBee = (bee: Bee) => {
   });
 };
 
-export const formatBees = (bees: Bee[]) => {
+export const formatBees = (...bees: Bee[]) => {
   const formatted = bees.map(formatBee);
 
   return ({
