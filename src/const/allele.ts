@@ -2,49 +2,88 @@
  * @see [Effect - Feed The Beast Wiki](https://ftbwiki.org/Effect)
  */
 export const EFFECT = {
+  /** Turns Dirt into Sand (as if "dissolving" it through acids). */
   acidic: 'extrabees.effect.acid',
+  /** Spawns fireworks. */
   birthday: 'extrabees.effect.birthday',
+  /** Causes blindness to the player when in range. */
   darkness: 'extrabees.effect.blindness',
+  /** Increases the speed at which tree fruits ripen. */
   ripening: 'extrabees.effect.bonemeal_fruit',
+  /** Bonemeals nearby mushrooms  */
   mushroom: 'extrabees.effect.bonemeal_mushroom',
+  /** Bonemeals nearby saplings  */
   growth: 'extrabees.effect.bonemeal_sapling',
+  /** Continually applies 10 seconds of Nausea to the player when in range. */
   confusion: 'extrabees.effect.confusion',
+  /** Chance of spawning Ectoplasm. */
   ectoplasm: 'extrabees.effect.ectoplasm',
   festival: 'extrabees.effect.festival',
+  /** Spawns fireworks with explosions with colors based on the bee. */
   fireworks: 'extrabees.effect.fireworks',
+  /** Fills up hunger bar when in range. */
   nourishment: 'extrabees.effect.food',
+  /** Increases jump distance when in range. */
   gravity: 'extrabees.effect.gravity',
+  /** Causes hunger to the player when in range. */
   hunger: 'extrabees.effect.hunger',
+  /** Causes frequent lightning strikes within the territory. Not compatible with the Lightning Rod. (Don't use in wooden house!) */
   lightning: 'extrabees.effect.lightning',
+  /** Spawns fire charges high up in the air to rain down. Do not use in a wooden house! */
   meteor: 'extrabees.effect.meteor',
+  /** Very slowly charges nearby machines with MJ (BuildCraft power). */
   power: 'extrabees.effect.power',
+  /** Causes two hearts of damage repeatedly, will quickly kill any unprotected players. Much faster than "Radioact." effect. */
   unstable: 'extrabees.effect.radioactive',
+  /** Uses potion effect Weakness on nearby player for 10 seconds  */
   slowness: 'extrabees.effect.slow',
+  /** Chance of spawning Creepers at low enough light level. Not to be confused with the "Creeper" effect. */
   creepers: 'extrabees.effect.spawn_creeper',
+  /** Chance of spawning Skeletons at low enough light level. */
   skeletons: 'extrabees.effect.spawn_skeleton',
+  /** Chance of spawning Zombies and Angry Zombies at low enough light level. */
   zombies: 'extrabees.effect.spawn_zombie',
+  /** Randomly teleports the player a short distance when in range. */
   teleport: 'extrabees.effect.teleport',
   antigravity: 'extrabees.effect.thief',
+  /** Fills nearby tanks with water. */
   water: 'extrabees.effect.water',
   wither: 'extrabees.effect.wither',
+  /** Causes small amount of damage repeatedly to the player when in range. */
   aggressive: 'forestry.effectAggressive',
+  /** Continually applies 1-2 seconds of Regeneration to the player when in range. */
   beatific: 'forestry.effectBeatific',
+  /** Causes spontaneous explosions centered at the player. Does not destroy blocks and deals a variable amount of damage, potentially killing in one blast. The effect's damage is not affected by any kind of armor. Not to be confused with the "Creepers" effect. */
   creeper: 'forestry.effectCreeper',
+  /** Causes nausea */
   drunkard: 'forestry.effectDrunkard',
+  /** Continuously grants player XP when in range. */
   explorer: 'forestry.effectExploration',
   fertile: 'forestry.effectFertile',
   festive: 'forestry.effectFestiveEaster',
+  /** Causes water in territory to turn into Ice. */
   freezing: 'forestry.effectGlacial',
+  /** Attacks nearby monsters. */
   heroic: 'forestry.effectHeroic',
+  /** Sets player permanently aflame when in range. */
   flammable: 'forestry.effectIgnition',
+  /** Poisons the player when in range. */
   poison: 'forestry.effectMiasmic',
+  /** Causes massive amount of damage to players in range. */
   ends: 'forestry.effectMisanthrope',
+  /** Randomly turns nearby grass blocks into mycelium, makes mushrooms giant, and turns cows into mooshrooms. */
   mycophilic: 'forestry.effectMycophilic',
+  /** No effect. */
   none: 'forestry.effectNone',
+  /** Causes two hearts of damage repeatedly when in range. Much slower than "Unstable" effect. May also destroy blocks. */
   radioactive: 'forestry.effectRadioactive',
+  /** Spawns Skeletons, Zombies, or Blazes if their drops are lying around. */
   reanimation: 'forestry.effectReanimation',
+  /** Nearby mobs try to move away from the player. */
   repulsion: 'forestry.effectRepulsion',
+  /** Spawns Creeper, Endermen, Spiders, Cave Spiders, Ghasts, or Ender Dragons if their drops are lying around. */
   resurrection: 'forestry.effectResurrection',
+  /** Snow begins to fall slowly (not spawn snow cover). */
   snow: 'forestry.effectSnowing',
 } as const;
 
