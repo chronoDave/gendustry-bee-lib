@@ -6,7 +6,7 @@ export type { Mutation } from './format/mutation';
 export type { Flower } from './format/flower';
 export type { Item } from './format/item';
 
-export { default as formatBee } from './format/bee';
+export { formatBee, formatBees } from './format/bee';
 export { default as formatBranch } from './format/branch';
 export {
   formatBlock,
@@ -19,7 +19,7 @@ export {
   formatHoneyDrop
 } from './format/item';
 export { default as formatTraits } from './format/traits';
-export { default as formatMutation } from './format/mutation';
+export { formatMutation, formatMutations } from './format/mutation';
 export { default as formatFlower } from './format/flower';
 export {
   formatTemperature as formatRequirementTemperature,

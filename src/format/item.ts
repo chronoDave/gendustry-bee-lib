@@ -23,5 +23,8 @@ const formatItem = (type: string) => (id: number) => (item: Item) => ({
   ]
 });
 
+/** @see [Adding Honey Drops and Combs - BDew](https://bdew.net/gendustry/configuration/adding-custom-bees/adding-honey-drops-and-combs/) */
 export const formatHoneyDrop = formatItem('HoneyDrops');
+
+/** @see [Adding Honey Drops and Combs - BDew](https://bdew.net/gendustry/configuration/adding-custom-bees/adding-honey-drops-and-combs/) */
 export const formatHoneyComb = formatItem('HoneyCombs');

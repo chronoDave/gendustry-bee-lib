@@ -10,6 +10,7 @@ import {
 } from '../const/allele';
 
 export type Traits = {
+  /** Must use {@link SPECIES}, does not work with custom bees */
   base: string
   speed?: keyof typeof SPEED
   lifespan?: keyof typeof LIFESPAN
