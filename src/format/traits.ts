@@ -2,7 +2,7 @@ import {
   EFFECT,
   FLOWER,
   FERTILITY,
-  FLOWERING,
+  POLLINATION,
   LIFESPAN,
   SPEED,
   TERRITORY,
@@ -20,7 +20,7 @@ export type Traits = {
   cave?: boolean
   rain?: boolean
   flower?: keyof typeof FLOWER | string
-  pollinate?: keyof typeof FLOWERING
+  pollination?: keyof typeof POLLINATION
   territory?: keyof typeof TERRITORY
   effect?: keyof typeof EFFECT
 };
@@ -53,7 +53,7 @@ export default (traits: Traits) => [
   ['Cave_Dwelling', formatBool(traits.cave)],
   ['Tolerant_Flyer', formatBool(traits.rain)],
   ['Flower_Provider', formatFlower(traits.flower)],
-  ['Flowering', formatConst(FLOWERING, traits.pollinate)],
+  ['Flowering', formatConst(POLLINATION, traits.pollination)],
   ['Territory', formatConst(TERRITORY, traits.territory)],
   ['Effect', formatConst(EFFECT, traits.effect)]
 ]
