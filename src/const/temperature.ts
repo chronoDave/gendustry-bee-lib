@@ -2,7 +2,7 @@ const TEMPERATURE = {
   none: 'None',
   icy: 'Icy',
   cold: 'Cold',
-  normal: 'Nomal',
+  normal: 'Normal',
   warm: 'Warm',
   hot: 'Hot',
   hellish: 'Hellish'
