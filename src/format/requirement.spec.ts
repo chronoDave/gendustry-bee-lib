@@ -33,8 +33,8 @@ test('[formatHumidity] formats humidity', t => {
 
 test('[formatBiome] formats biome', t => {
   t.equal(
-    formatBiome(BIOME.nether),
-    'Req Biome Hell',
+    formatBiome(BIOME.coldBeach),
+    'Req Biome "Cold Beach"',
     'formats biome'
   );
 
