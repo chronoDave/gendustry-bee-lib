@@ -1,6 +1,4 @@
 import type { Traits } from './traits';
-import type TEMPERATURE from '../const/temperature';
-import type HUMIDITY from '../const/humidity';
 import type { Stack } from '../lib/format';
 
 import { formatHex, formatStack } from '../lib/format';
@@ -23,8 +21,8 @@ export type Bee = {
   glowing?: boolean
   secret?: boolean
   nocturnal?: boolean
-  humidity?: keyof typeof HUMIDITY
-  temperature?: keyof typeof TEMPERATURE
+  humidity?: string
+  temperature?: string
   drops?: {
     regular?: Stack[]
     special?: Stack[]
