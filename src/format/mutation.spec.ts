@@ -1,5 +1,7 @@
 import test from 'tape';
 
+import BIOME from '../const/biome';
+
 import { formatMutation } from './mutation';
 import { formatBiome } from './requirement';
 
@@ -19,7 +21,7 @@ test('[mutation] formats requirements', t => {
     right: 'right',
     out: 'test',
     n: 0.2,
-    requirement: formatBiome('nether')
+    requirement: formatBiome(BIOME.nether)
   });
 
   t.true(

@@ -1,5 +1,9 @@
 import test from 'tape';
 
+import BIOME from '../const/biome';
+import TEMPERATURE from '../const/temperature';
+import HUMIDITY from '../const/humidity';
+
 import {
   formatTemperature,
   formatHumidity,
@@ -9,7 +13,7 @@ import {
 
 test('[formatTemperature] formats temperature', t => {
   t.equal(
-    formatTemperature('icy'),
+    formatTemperature(TEMPERATURE.icy),
     'Req Temperature Icy',
     'formats temperature'
   );
@@ -19,7 +23,7 @@ test('[formatTemperature] formats temperature', t => {
 
 test('[formatHumidity] formats humidity', t => {
   t.equal(
-    formatHumidity('damp'),
+    formatHumidity(HUMIDITY.damp),
     'Req Humidity Damp',
     'formats humidity'
   );
@@ -29,7 +33,7 @@ test('[formatHumidity] formats humidity', t => {
 
 test('[formatBiome] formats biome', t => {
   t.equal(
-    formatBiome('nether'),
+    formatBiome(BIOME.nether),
     'Req Biome Hell',
     'formats biome'
   );
