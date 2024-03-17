@@ -9,7 +9,7 @@ import { formatBlock as formatIngredientBlock } from './ingredient';
 const formatRequirement = (type: string) => (x: string) =>
   `Req ${type} ${x}`;
 
-const formatConst = <T extends Record<string, string>>(obj: T) => (type: string) => (x: keyof T) => formatRequirement(type)(obj[x]);
+const formatConst = (obj: Record<string, string>) => (type: string) => (x: string) => formatRequirement(type)(obj[x]);
 
 export const formatTemperature = formatConst(TEMPERATURE)('Temperature');
 export const formatHumidity = formatConst(HUMIDITY)('Humidity');
