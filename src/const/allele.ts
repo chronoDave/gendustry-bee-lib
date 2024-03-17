@@ -323,7 +323,7 @@ export const TOLERANCE = {
    * Temperature: Normal
    * Humidity: Normal
    */
-  none: 'forestry.toleranceNon',
+  none: 'forestry.toleranceNone',
   /**
    * Temperature: Normal, Warm
    * Humidity: Normal, Arid
