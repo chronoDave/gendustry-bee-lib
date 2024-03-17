@@ -48,3 +48,4 @@ export { default as SPECIES } from './const/species';
 export { default as TEMPERATURE } from './const/temperature';
 export { default as BIOME } from './const/biome';
 export { default as BRANCH } from './const/branch';
+export { default as LIQUID } from './const/liquid';
